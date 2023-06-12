@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+  <style>
+         table,tr,td{
+                     border: 1px solid black;
+                     }
+     </style>
+</head>
+<body>
+ <form method="post" action="login">
+      {% csrf_token %}
+      <table>
+          <caption style="text-align:center">LOGIN FORM</caption>
+          <tr>
+              <td>
+                  <label>User Name </label>
+              </td>
+              <td>
+                 <input type="text" name="user_name" >
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>Password </label>
+              </td>
+              <td>
+                 <input type="password" name="pass" >
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                   <input type="submit" name="SUBMIT">
+              </td>
+          </tr>
+      </table>
+  </form>
+{% for msg in messages%}
+   {{msg}}
+ {% endfor %}
+</body>
+</html>

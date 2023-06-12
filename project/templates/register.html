@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION FORM</title>
+     <style>
+         table,tr,td{
+                     border: 1px solid black;
+                     }
+     </style>
+ </head>
+ <body>
+  <form method="post" action="register">
+      {% csrf_token %}
+      <table>
+          <caption style="text-align:center">REGISTRATION FORM</caption>
+          <tr>
+              <td>
+                  <label>User Name </label>
+              </td>
+              <td>
+                 <input type="text" name="user_name" >
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>First Name </label>
+              </td>
+              <td>
+                 <input type="text" name="first_name" >
+              </td>
+          </tr>
+           <tr>
+              <td>
+                  <label>Last Name </label>
+              </td>
+              <td>
+                 <input type="text" name="last_name" >
+              </td>
+          </tr>
+          <tr>
+              <td>
+                 <label>Email </label>
+              </td>
+              <td>
+                  <input type="email" name="mail_id">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>Password </label>
+              </td>
+              <td>
+                 <input type="password" name="pass" >
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>Confirm Password </label>
+              </td>
+              <td>
+                 <input type="password" name="cpass">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input type="checkbox" name="check">
+                  <label>I agree to the terms and conditions as set out by the user agreement.</label>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                   <input type="submit" name="SUBMIT">
+              </td>
+          </tr>
+      </table>
+  </form>
+ {% for msg in messages%}
+   {{msg}}
+ {% endfor %}
+ </body>
+</html>
